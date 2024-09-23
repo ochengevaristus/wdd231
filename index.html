@@ -14,12 +14,12 @@
     <header>
         <div class="profile-header">
             <img src="images/WhatsApp Image 2024-05-20 at 7.42.34 PM.jpeg" alt="Evaristus Ochieng" class="profile-image">
-            <h1>Evaristus Ochieng </h1>
+            <h1>Evaristus Ochieng</h1>
         </div>
         <nav>
             <div class="menu-toggle">☰</div>
             <ul class="menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
@@ -31,9 +31,7 @@
         <section id="upper-content">
             <div id="course-outline">
                 <h2>Course Outline</h2>
-                <ul id="course-list">
-
-                </ul>
+                <ul id="course-list"></ul>
             </div>
 
             <div id="main-content">
@@ -48,15 +46,16 @@
 
         <section id="selectable-courses">
             <h3>Select Courses</h3>
-            <div id="course-container">
-            
-            </div>
+            <button id="filter-all">All</button>
+            <button id="filter-completed">Completed</button>
+            <button id="filter-incomplete">Incomplete</button>
+            <div id="course-container"></div>
             <p>Total Credits: <span id="totalCredits">0</span></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Your Name, Your Location</p>
+        <p>&copy; <span id="currentyear"></span> Evaristus Ochieng, Kenya</p>
         <p id="lastModified"></p>
     </footer>
 </body>

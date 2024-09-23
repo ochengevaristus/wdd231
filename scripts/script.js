@@ -1,9 +1,5 @@
-
 document.getElementById('currentyear').textContent = new Date().getFullYear();
-
-
 document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
-
 
 const courses = [
     { code: 'CSE 110', name: 'Intro to Computer Science', completed: false },
@@ -13,26 +9,21 @@ const courses = [
     { code: 'WDD 231', name: 'Course Home Page', completed: false }
 ];
 
-
 let totalCredits = 0;
 const creditsPerCourse = 3;
-
 
 function renderCourses() {
     const courseList = document.getElementById('course-list');
     const courseContainer = document.getElementById('course-container');
 
-
     courseList.innerHTML = '';
     courseContainer.innerHTML = '';
 
     courses.forEach((course, index) => {
-
         const courseItem = document.createElement('li');
         courseItem.textContent = `${course.name} (${course.code})`;
         courseList.appendChild(courseItem);
 
-    
         const courseBox = document.createElement('div');
         courseBox.classList.add('course-box');
         courseBox.textContent = `${course.code}`;
@@ -40,7 +31,6 @@ function renderCourses() {
         courseBox.addEventListener('click', () => toggleCompletion(index));
         courseContainer.appendChild(courseBox);
     });
-
 
     document.getElementById('totalCredits').textContent = totalCredits;
 }
@@ -50,5 +40,26 @@ function toggleCompletion(index) {
     totalCredits = courses.filter(course => course.completed).length * creditsPerCourse;
     renderCourses();
 }
+
+function filterCourses(filter) {
+    const courseContainer = document.getElementById('course-container');
+    courseContainer.innerHTML = '';
+
+    courses.forEach((course, index) => {
+        if (filter === 'completed' && !course.completed) return;
+        if (filter === 'incomplete' && course.completed) return;
+
+        const courseBox = document.createElement('div');
+        courseBox.classList.add('course-box');
+        courseBox.textContent = `${course.code}`;
+        courseBox.classList.add(course.completed ? 'completed' : 'incomplete');
+        courseBox.addEventListener('click', () => toggleCompletion(index));
+        courseContainer.appendChild(courseBox);
+    });
+}
+
+document.getElementById('filter-all').addEventListener('click', () => renderCourses());
+document.getElementById('filter-completed').addEventListener('click', () => filterCourses('completed'));
+document.getElementById('filter-incomplete').addEventListener('click', () => filterCourses('incomplete'));
 
 renderCourses();
