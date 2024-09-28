@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Alpha Tech Solutions",
+        "address": "123 Main St, Timbuktu",
+        "phone": "123-456-7890",
+        "website": "https://alphatech.ws/",
+        "image": "https://example.com/iota-software.png",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Beta Marketing Agency",
+        "address": "456 Oak St, Timbuktu",
+        "phone": "234-567-8901",
+        "website": "https://www.e-betabeta.com/",
+        "image": "https://example.com/beta-marketing.png",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Gamma Construction",
+        "address": "789 Maple St, Timbuktu",
+        "phone": "345-678-9012",
+        "website": "https://www.gammaconst.com/",
+        "image": "https://example.com/gamma-construction.png",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Delta Consulting",
+        "address": "1010 Cedar St, Timbuktu",
+        "phone": "456-789-0123",
+        "website": "https://delta-cgi.com/",
+        "image": "https://example.com/delta-consulting.png",
+        "membershipLevel": 2
+    },
+    {
+        "name": "https://epsilonlegal.com.au/",
+        "address": "1111 Pine St, Timbuktu",
+        "phone": "567-890-1234",
+        "website": "https://epsilonlegal.com",
+        "image": "https://example.com/epsilon-legal.png",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Zeta Financial Advisors",
+        "address": "1212 Birch St, Timbuktu",
+        "phone": "678-901-2345",
+        "website": "https://zetacapgroup.com/",
+        "image": "https://example.com/zeta-financial.png",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Theta Fitness Center",
+        "address": "1313 Spruce St, Timbuktu",
+        "phone": "789-012-3456",
+        "website": "https://www.crossfittheta.co.uk/about/",
+        "image": "https://example.com/theta-fitness.png",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Iota Software Developers",
+        "address": "1414 Redwood St, Timbuktu",
+        "phone": "890-123-4567",
+        "website": "https://www.iota.org/foundation/careers",
+        "image": "https://example.com/iota-software.png",
+        "membershipLevel": 3
+    }
+]
