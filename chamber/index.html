@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Timbuktu Chamber of Commerce Directory">
+    <meta name="keywords" content="Timbuktu, Chamber of Commerce, Business Directory">
+    <meta name="author" content="Chamber of Commerce Team">
+    <title>Timbuktu Chamber of Commerce</title>
+    <link rel="stylesheet" href="directory.css">
+    <script defer src="directory.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="data/images/Screenshot 2024-10-05 192131.png" alt="Hero image of Timbuktu" class="hero-image">
+            <div class="hero-text">
+                <h1>Welcome to Timbuktu Chamber of Commerce</h1>
+                <p>Your gateway to local businesses and services</p>
+                <a href="#" class="btn-cta">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="current-weather">
+            <h2>Current Weather in Timbuktu</h2>
+            <p>Temperature: <span id="temp"></span>°C</p>
+            <p>Weather: <span id="description"></span></p>
+            <p>3-Day Forecast: <span id="forecast"></span></p>
+        </section>
+
+        <section id="events">
+            <h2>Current Events</h2>
+            <p>Placeholder for upcoming events in Timbuktu.</p>
+        </section>
+
+        <section class="directory grid">
+            <!-- Member cards will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Timbuktu Chamber of Commerce. All Rights Reserved.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

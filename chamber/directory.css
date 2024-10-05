@@ -39,6 +39,19 @@ main {
     padding: 20px;
 }
 
+.cta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 footer {
     background-color: #333;
     color: white;
