@@ -1,7 +1,285 @@
-<section class="hero">
-    <img src="images/hero.jpg" alt="Chamber of Commerce - Join Us" class="responsive-hero">
-    <div class="hero-content">
-        <h2>Join the Chamber of Commerce</h2>
-        <a href="join.html" class="cta-button">Become a Member</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Chamber</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header, footer {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .membership-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(45% - 20px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animation for cards on page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeIn 0.5s forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Chamber of Commerce</h2>
+    </header>
+    
+    <h1>Join the Chamber</h1>
+
+    <form action="thankyou.html" method="get">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" title="First Name" required autocomplete="given-name">
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" title="Last Name" required autocomplete="family-name">
+
+        <label for="org-title">Organizational Title:</label>
+        <input type="text" id="org-title" name="org-title" title="Organizational Title" required pattern="[A-Za-z\- ]{7,}" autocomplete="organization-title">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" title="Email Address" required placeholder="example@example.com" autocomplete="email">
+
+        <label for="phone">Mobile Phone Number:</label>
+        <input type="tel" id="phone" name="phone" title="Mobile Phone Number" required autocomplete="tel">
+
+        <label for="business-name">Business/Organization Name:</label>
+        <input type="text" id="business-name" name="business-name" title="Business/Organization Name" required autocomplete="organization">
+
+        <label for="membership-level">Membership Level:</label>
+        <select id="membership-level" name="membership-level" required>
+            <option value="NP Membership">NP Membership (Non-Profit, No Fee)</option>
+            <option value="Bronze Membership">Bronze Membership</option>
+            <option value="Silver Membership">Silver Membership</option>
+            <option value="Gold Membership">Gold Membership</option>
+        </select>
+
+        <label for="description">Business/Organization Description:</label>
+        <textarea id="description" name="description" title="Description" required></textarea>
+
+        <input type="hidden" id="timestamp" name="timestamp">
+        
+        <input type="submit" value="Submit Application">
+    </form>
+
+    <div class="membership-cards">
+        <div class="card" onclick="openModal('modal-np')">
+            <h3>NP Membership</h3>
+            <p>No Fee</p>
+            <p>Non-Profit Organizations</p>
+            <a href="#">View Benefits</a>
+        </div>
+        <div class="card" onclick="openModal('modal-bronze')">
+            <h3>Bronze Membership</h3>
+            <p>$100</p>
+            <p>Basic Benefits</p>
+            <a href="#">View Benefits</a>
+        </div>
+        <div class="card" onclick="openModal('modal-silver')">
+            <h3>Silver Membership</h3>
+            <p>$250</p>
+            <p>Advanced Benefits</p>
+            <a href="#">View Benefits</a>
+        </div>
+        <div class="card" onclick="openModal('modal-gold')">
+            <h3>Gold Membership</h3>
+            <p>$500</p>
+            <p>Premium Benefits</p>
+            <a href="#">View Benefits</a>
+        </div>
     </div>
-</section>
+
+    <!-- Modals -->
+    <div id="modal-np" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-np')">&times;</span>
+            <h3>NP Membership Benefits</h3>
+            <ul>
+                <li>Networking Opportunities</li>
+                <li>Access to Resources</li>
+                <li>Support from Chamber</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-bronze" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-bronze')">&times;</span>
+            <h3>Bronze Membership Benefits</h3>
+            <ul>
+                <li>Networking Opportunities</li>
+                <li>Access to Resources</li>
+                <li>Discounts on Events</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-silver" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-silver')">&times;</span>
+            <h3>Silver Membership Benefits</h3>
+            <ul>
+                <li>All Bronze Benefits</li>
+                <li>Advertising Opportunities</li>
+                <li>Exclusive Training</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-gold" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-gold')">&times;</span>
+            <h3>Gold Membership Benefits</h3>
+            <ul>
+                <li>All Silver Benefits</li>
+                <li>Spotlight Position on Homepage</li>
+                <li>Free Event Entries</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Chamber of Commerce</p>
+    </footer>
+
+    <script>
+        // Set the timestamp in the hidden input field
+        document.getElementById('timestamp').value = new Date().toISOString();
+
+        // Functions to open and close modals
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modals when clicking outside of them
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        };
+    </script>
+</body>
+</html>
