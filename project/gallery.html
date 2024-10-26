@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Impala Park Gallery</h1>
+        <div class="gallery">
+            <img src="images/impala.jpg" alt="Impala in the park" loading="lazy" class="gallery-image" data-modal="modal1">
+            <img src="images/scenic.jpg" alt="Scenic view of Impala Park" loading="lazy" class="gallery-image" data-modal="modal2">
+            <img src="images/wildlife.jpeg" alt="Wildlife in Impala Park" loading="lazy" class="gallery-image" data-modal="modal3">
+        </div>
+    </main>
+
+    <div id="modal1" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img1">
+        <div id="caption"></div>
+    </div>
+    <div id="modal2" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img2">
+        <div id="caption2"></div>
+    </div>
+    <div id="modal3" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img3">
+        <div id="caption3"></div>
+    </div>
+
+    <footer>
+        <a href="attributions.html">Attributions</a>
+    </footer>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
